@@ -23,17 +23,20 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <a href="/" className="text-gray-300 hover:text-gold-400 transition-colors">
+              Home
+            </a>
             <a href="#sale" className="text-gray-300 hover:text-gold-400 transition-colors">
               Token Sale
+            </a>
+            <a href="/staking" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold">
+              ⛏️ Staking
             </a>
             <a href="#tokenomics" className="text-gray-300 hover:text-gold-400 transition-colors">
               Tokenomics
             </a>
             <a href="#roadmap" className="text-gray-300 hover:text-gold-400 transition-colors">
               Roadmap
-            </a>
-            <a href="#team" className="text-gray-300 hover:text-gold-400 transition-colors">
-              Team
             </a>
             <a href="#" className="text-gray-300 hover:text-gold-400 transition-colors">
               Whitepaper
@@ -58,17 +61,20 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
+            <a href="/" className="block text-gray-300 hover:text-gold-400 transition-colors">
+              Home
+            </a>
             <a href="#sale" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Token Sale
+            </a>
+            <a href="/staking" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold">
+              ⛏️ Staking
             </a>
             <a href="#tokenomics" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Tokenomics
             </a>
             <a href="#roadmap" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Roadmap
-            </a>
-            <a href="#team" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              Team
             </a>
             <a href="#" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Whitepaper
