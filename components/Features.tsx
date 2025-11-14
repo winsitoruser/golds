@@ -37,41 +37,55 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-20 px-4">
-      <div className="container mx-auto">
+    <section className="py-20 px-4 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
+      
+      <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-3 px-8 py-4 glass-gold rounded-full mb-6 backdrop-blur-xl border border-gold-500/20">
-            <span className="text-sm text-gray-300 font-medium tracking-wide">Key Features</span>
+          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-amber-500/10 rounded-full mb-6 border border-amber-500/20 backdrop-blur-sm">
+            <Trophy className="w-4 h-4 text-amber-400" />
+            <span className="text-sm text-amber-400 font-semibold tracking-wider uppercase">Key Features</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-luxury">Why Choose GOLDS</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-white">
+            Why Choose GOLDS
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Institutional-grade infrastructure combining gold stability with blockchain innovation
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => {
             const Icon = feature.icon
+            const colors = [
+              { bg: 'from-amber-500/10', border: 'border-amber-500/50', icon: 'text-amber-400', hover: 'hover:border-amber-500' },
+              { bg: 'from-blue-500/10', border: 'border-blue-500/50', icon: 'text-blue-400', hover: 'hover:border-blue-500' },
+              { bg: 'from-green-500/10', border: 'border-green-500/50', icon: 'text-green-400', hover: 'hover:border-green-500' },
+              { bg: 'from-purple-500/10', border: 'border-purple-500/50', icon: 'text-purple-400', hover: 'hover:border-purple-500' },
+              { bg: 'from-cyan-500/10', border: 'border-cyan-500/50', icon: 'text-cyan-400', hover: 'hover:border-cyan-500' },
+              { bg: 'from-pink-500/10', border: 'border-pink-500/50', icon: 'text-pink-400', hover: 'hover:border-pink-500' }
+            ]
+            const color = colors[index % colors.length]
+            
             return (
               <div
                 key={index}
-                className="luxury-card elegant-shadow rounded-2xl p-10 hover:luxury-glow transition-all group card-3d relative overflow-hidden"
+                className={`group relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 ${color.hover} transition-all duration-300 hover:scale-[1.02]`}
               >
-                <div className="holographic absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${color.bg} to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300`}></div>
                 
-                {/* Icon */}
-                <div className="relative z-10 w-20 h-20 premium-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all elegant-shadow">
-                  <Icon className="w-10 h-10 text-black" />
-                </div>
-
-                {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-luxury transition-all">{feature.title}</h3>
-                  <p className="text-gray-400 group-hover:text-gray-200 transition-colors leading-relaxed">{feature.description}</p>
+                  {/* Icon */}
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${color.bg} border ${color.border} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-8 h-8 ${color.icon}`} />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-100 transition-colors">{feature.title}</h3>
+                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             )
