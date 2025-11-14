@@ -26,17 +26,17 @@ export default function Header() {
             <a href="/" className="text-gray-300 hover:text-gold-400 transition-colors">
               Home
             </a>
-            <a href="#sale" className="text-gray-300 hover:text-gold-400 transition-colors">
-              Token Sale
-            </a>
             <a href="/staking" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold">
               ⛏️ Staking
             </a>
+            <a href="/calculator" className="text-gray-300 hover:text-gold-400 transition-colors">
+              🧮 Calculator
+            </a>
+            <a href="/dashboard" className="text-gray-300 hover:text-gold-400 transition-colors">
+              📊 Dashboard
+            </a>
             <a href="#tokenomics" className="text-gray-300 hover:text-gold-400 transition-colors">
               Tokenomics
-            </a>
-            <a href="#roadmap" className="text-gray-300 hover:text-gold-400 transition-colors">
-              Roadmap
             </a>
             <a href="#" className="text-gray-300 hover:text-gold-400 transition-colors">
               Whitepaper
@@ -64,17 +64,17 @@ export default function Header() {
             <a href="/" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Home
             </a>
-            <a href="#sale" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              Token Sale
-            </a>
             <a href="/staking" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold">
               ⛏️ Staking
             </a>
+            <a href="/calculator" className="block text-gray-300 hover:text-gold-400 transition-colors">
+              🧮 Calculator
+            </a>
+            <a href="/dashboard" className="block text-gray-300 hover:text-gold-400 transition-colors">
+              📊 Dashboard
+            </a>
             <a href="#tokenomics" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Tokenomics
-            </a>
-            <a href="#roadmap" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              Roadmap
             </a>
             <a href="#" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Whitepaper
