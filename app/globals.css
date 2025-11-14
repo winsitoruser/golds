@@ -1,0 +1,1478 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 26, 26, 26;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+}
+
+/* Gold shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    #fbbf24 0%,
+    #fcd34d 50%,
+    #fbbf24 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 40px rgba(251, 191, 36, 0.6), 0 0 80px rgba(251, 191, 36, 0.3);
+}
+
+/* Particle background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Futuristic Grid */
+.grid-background {
+  background-image: 
+    linear-gradient(rgba(251, 191, 36, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 191, 36, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.glass-gold {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 119, 6, 0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+/* 3D Transform Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Neon Glow */
+.neon-gold {
+  box-shadow: 
+    0 0 10px rgba(251, 191, 36, 0.5),
+    0 0 20px rgba(251, 191, 36, 0.3),
+    0 0 40px rgba(251, 191, 36, 0.2),
+    inset 0 0 20px rgba(251, 191, 36, 0.1);
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 10px rgba(251, 191, 36, 0.8),
+    0 0 20px rgba(251, 191, 36, 0.6),
+    0 0 30px rgba(251, 191, 36, 0.4),
+    0 0 40px rgba(251, 191, 36, 0.2);
+}
+
+/* Animated Border */
+@keyframes border-flow {
+  0%, 100% {
+    border-color: rgba(251, 191, 36, 0.3);
+  }
+  50% {
+    border-color: rgba(251, 191, 36, 0.8);
+  }
+}
+
+.border-animate {
+  animation: border-flow 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+.float-animation {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Scan Line Effect */
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.8), transparent);
+  animation: scan 4s linear infinite;
+}
+
+/* Holographic Effect */
+.holographic {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.2) 0%,
+    rgba(217, 119, 6, 0.1) 25%,
+    rgba(251, 191, 36, 0.2) 50%,
+    rgba(217, 119, 6, 0.1) 75%,
+    rgba(251, 191, 36, 0.2) 100%
+  );
+  background-size: 200% 200%;
+  animation: holographic-move 3s ease infinite;
+}
+
+@keyframes holographic-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Luxury Premium Effects */
+.luxury-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(251, 191, 36, 0.05) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  backdrop-filter: blur(30px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 4s linear infinite;
+}
+
+@keyframes border-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Premium Gold Gradient */
+.premium-gold {
+  background: linear-gradient(
+    135deg,
+    #fef3c7 0%,
+    #fde68a 10%,
+    #fcd34d 20%,
+    #fbbf24 30%,
+    #f59e0b 40%,
+    #d97706 50%,
+    #f59e0b 60%,
+    #fbbf24 70%,
+    #fcd34d 80%,
+    #fde68a 90%,
+    #fef3c7 100%
+  );
+  background-size: 200% 200%;
+  animation: premium-shine 4s ease-in-out infinite;
+}
+
+@keyframes premium-shine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Elegant Shadow */
+.elegant-shadow {
+  box-shadow: 
+    0 4px 20px rgba(251, 191, 36, 0.15),
+    0 8px 40px rgba(251, 191, 36, 0.1),
+    0 16px 80px rgba(251, 191, 36, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Luxury Glow */
+.luxury-glow {
+  position: relative;
+}
+
+.luxury-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.luxury-glow:hover::after {
+  opacity: 1;
+}
+
+/* Elegant Text Glow */
+.text-luxury {
+  background: linear-gradient(135deg, #fef3c7, #fbbf24, #f59e0b, #fbbf24, #fef3c7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: premium-shine 3s linear infinite;
+  text-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+}
+
+/* Premium Button */
+.btn-luxury {
+  position: relative;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s ease;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.btn-luxury::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-luxury:hover::after {
+  opacity: 1;
+}
+
+/* Elegant Particle */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, -100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #fbbf24, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-float 6s ease-in-out infinite;
+}
+
+/* Luxury Border Glow */
+.border-luxury {
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.border-luxury::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 340deg,
+    rgba(251, 191, 36, 0.8) 340deg 360deg
+  );
+  animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border-luxury::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: inherit;
+}
+
+/* Smooth Transitions */
+* {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ===== GOLD MINING ORNAMENTS ===== */
+
+/* Gold Nugget Floating */
+.gold-nugget {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #fbbf24, #d97706);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  box-shadow: 
+    0 4px 8px rgba(251, 191, 36, 0.4),
+    inset -2px -2px 4px rgba(217, 119, 6, 0.6),
+    inset 2px 2px 4px rgba(254, 243, 199, 0.8);
+  animation: float-nugget 8s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes float-nugget {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-40px) rotate(270deg);
+  }
+}
+
+/* Gold Bars Stack */
+.gold-bar {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #d97706 100%);
+  border-radius: 4px;
+  box-shadow: 
+    0 4px 12px rgba(251, 191, 36, 0.5),
+    inset 2px 2px 6px rgba(254, 243, 199, 0.9),
+    inset -2px -2px 6px rgba(217, 119, 6, 0.7);
+  animation: bar-shimmer 3s ease-in-out infinite;
+}
+
+.gold-bar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  border: 2px solid rgba(217, 119, 6, 0.3);
+  border-radius: 2px;
+}
+
+@keyframes bar-shimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+/* Mining Pickaxe */
+.pickaxe {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  animation: mining 4s ease-in-out infinite;
+}
+
+@keyframes mining {
+  0%, 100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+/* Hexagonal Gold Pattern */
+.hex-pattern {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: 
+    linear-gradient(30deg, transparent 40%, rgba(251, 191, 36, 0.1) 40%, rgba(251, 191, 36, 0.1) 60%, transparent 60%),
+    linear-gradient(90deg, transparent 40%, rgba(251, 191, 36, 0.1) 40%, rgba(251, 191, 36, 0.1) 60%, transparent 60%),
+    linear-gradient(150deg, transparent 40%, rgba(251, 191, 36, 0.1) 40%, rgba(251, 191, 36, 0.1) 60%, transparent 60%);
+  background-size: 30px 52px;
+  animation: hex-pulse 6s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+@keyframes hex-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Gold Chains */
+.gold-chain {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    rgba(251, 191, 36, 0.3) 10px,
+    rgba(251, 191, 36, 0.3) 20px
+  );
+  animation: chain-move 20s linear infinite;
+}
+
+@keyframes chain-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+/* Crystal Formation */
+.crystal {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 40px solid rgba(251, 191, 36, 0.6);
+  filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.5));
+  animation: crystal-glow 4s ease-in-out infinite;
+}
+
+.crystal::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid rgba(217, 119, 6, 0.4);
+}
+
+@keyframes crystal-glow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.5)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 8px 16px rgba(251, 191, 36, 0.8)) brightness(1.3);
+  }
+}
+
+/* Gold Coin Spin */
+.gold-coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #fbbf24);
+  border-radius: 50%;
+  border: 3px solid #d97706;
+  box-shadow: 
+    0 4px 12px rgba(251, 191, 36, 0.6),
+    inset 2px 2px 8px rgba(254, 243, 199, 0.9),
+    inset -2px -2px 8px rgba(217, 119, 6, 0.7);
+  animation: coin-spin 6s linear infinite;
+}
+
+.gold-coin::before {
+  content: '$';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #92400e;
+}
+
+@keyframes coin-spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Digital Gold Grid */
+.digital-gold-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(251, 191, 36, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 191, 36, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: grid-slide 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-slide {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+
+/* Vault Door Element */
+.vault-door {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at center, 
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(251, 191, 36, 0.2) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  border: 4px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 
+    0 0 30px rgba(251, 191, 36, 0.3),
+    inset 0 0 30px rgba(251, 191, 36, 0.2);
+  animation: vault-rotate 20s linear infinite;
+  opacity: 0.4;
+}
+
+.vault-door::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fbbf24, #d97706);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+}
+
+.vault-door::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 2px dashed rgba(251, 191, 36, 0.3);
+}
+
+@keyframes vault-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gold Ore Chunks */
+.gold-ore {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: 
+    linear-gradient(135deg, 
+      #1a1a1a 0%, 
+      #fbbf24 20%, 
+      #1a1a1a 40%,
+      #fbbf24 60%,
+      #1a1a1a 80%,
+      #d97706 100%
+    );
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.4));
+  animation: ore-float 10s ease-in-out infinite;
+}
+
+@keyframes ore-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(240deg);
+  }
+}
+
+/* Treasure Chest */
+.treasure-chest {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(180deg, #92400e 0%, #78350f 100%);
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: chest-bounce 4s ease-in-out infinite;
+}
+
+.treasure-chest::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: linear-gradient(180deg, #b45309 0%, #92400e 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+.treasure-chest::after {
+  content: '✨';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes chest-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1.3);
+  }
+}
+
+/* ===== ULTRA LUXURY PREMIUM EFFECTS ===== */
+
+/* Diamond Particles */
+.diamond-particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #fff 0%, #fbbf24 50%, #fff 100%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: diamond-sparkle 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.8));
+  opacity: 0;
+}
+
+@keyframes diamond-sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+}
+
+/* Premium Spotlight */
+.spotlight {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: spotlight-move 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes spotlight-move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(100px, -50px);
+  }
+  66% {
+    transform: translate(-100px, 50px);
+  }
+}
+
+/* Luxury Silk Texture */
+.silk-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(251, 191, 36, 0.02) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Premium Bokeh Effect */
+.bokeh {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.4), transparent);
+  filter: blur(20px);
+  animation: bokeh-float 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes bokeh-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(50px, -80px) scale(1.3);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-50px, 80px) scale(0.8);
+    opacity: 0.4;
+  }
+}
+
+/* Light Rays */
+.light-ray {
+  position: absolute;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, rgba(251, 191, 36, 0.3), transparent);
+  animation: ray-shine 8s ease-in-out infinite;
+  pointer-events: none;
+  transform-origin: top;
+}
+
+@keyframes ray-shine {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-100px) scaleY(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* Luxury Corner Decoration */
+.corner-deco {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  pointer-events: none;
+}
+
+.corner-deco::before,
+.corner-deco::after {
+  content: '';
+  position: absolute;
+  background: rgba(251, 191, 36, 0.5);
+}
+
+.corner-deco.top-left {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.corner-deco.top-left::before {
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+}
+
+.corner-deco.top-left::after {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 30px;
+}
+
+.corner-deco.top-right {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-deco.top-right::before {
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 2px;
+}
+
+.corner-deco.top-right::after {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 30px;
+}
+
+/* Subtle Glow Pulse Effect */
+.glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(251, 191, 36, 0.15),
+      0 0 30px rgba(251, 191, 36, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(251, 191, 36, 0.2),
+      0 0 40px rgba(251, 191, 36, 0.15);
+  }
+}
+
+/* Champagne Bubbles */
+.bubble {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(251, 191, 36, 0.4));
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: bubble-rise 10s ease-in infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Luxury Shimmer Wave */
+.shimmer-wave {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(251, 191, 36, 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: wave-shimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes wave-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Golden Hour Glow */
+.golden-hour {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(251, 191, 36, 0.1) 0%,
+    transparent 60%
+  );
+  animation: golden-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes golden-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Premium Metallic Sheen */
+.metallic-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.metallic-sheen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: sheen-rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sheen-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Luxury Border Ornament */
+.border-ornament {
+  position: relative;
+}
+
+.border-ornament::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    transparent 0%,
+    rgba(251, 191, 36, 0.3) 25%,
+    rgba(251, 191, 36, 0.6) 50%,
+    rgba(251, 191, 36, 0.3) 75%,
+    transparent 100%
+  );
+  border-radius: inherit;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-glow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Starfield Background */
+.starfield {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(251, 191, 36, 0.5), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(251, 191, 36, 0.5), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(251, 191, 36, 0.5), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(251, 191, 36, 0.5), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(251, 191, 36, 0.5), transparent),
+    radial-gradient(1px 1px at 33% 80%, rgba(251, 191, 36, 0.5), transparent);
+  background-size: 200% 200%;
+  animation: starfield-twinkle 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes starfield-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    background-position: 0% 0%;
+  }
+  50% {
+    opacity: 0.8;
+    background-position: 100% 100%;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* ========================================
+   GOLD MINING + BLOCKCHAIN THEME
+   ======================================== */
+
+/* Mining Background Pattern */
+.mining-background {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,15,10,0.95) 50%, rgba(0,0,0,0.9) 100%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(184, 134, 11, 0.03) 10px,
+      rgba(184, 134, 11, 0.03) 20px
+    );
+  z-index: 0;
+}
+
+/* Excavation Lines */
+.excavation-lines {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(184, 134, 11, 0.05) 25%, rgba(184, 134, 11, 0.05) 26%, transparent 27%, transparent 74%, rgba(184, 134, 11, 0.05) 75%, rgba(184, 134, 11, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(184, 134, 11, 0.05) 25%, rgba(184, 134, 11, 0.05) 26%, transparent 27%, transparent 74%, rgba(184, 134, 11, 0.05) 75%, rgba(184, 134, 11, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Blockchain Network Nodes */
+.blockchain-network {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blockchain-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.8), rgba(251, 191, 36, 0.2));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+  animation: node-pulse 3s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Blockchain Connection Lines */
+.blockchain-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(251, 191, 36, 0.4) 50%, 
+    transparent
+  );
+  transform-origin: left center;
+  animation: data-flow 4s linear infinite;
+}
+
+@keyframes data-flow {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+/* Mining Conveyor Belt Effect */
+.conveyor-belt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(184, 134, 11, 0.3),
+    rgba(184, 134, 11, 0.3) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  animation: conveyor-move 3s linear infinite;
+}
+
+@keyframes conveyor-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+/* Rock/Ore Texture */
+.ore-texture {
+  position: relative;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%);
+}
+
+/* Digital Mining Grid */
+.digital-mining-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(251, 191, 36, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 191, 36, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: grid-scan 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-scan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+/* Blockchain Block */
+.blockchain-block {
+  position: relative;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(20, 15, 10, 0.9) 0%, rgba(40, 30, 20, 0.9) 100%);
+  border: 2px solid rgba(184, 134, 11, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blockchain-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(251, 191, 36, 0.2),
+    transparent
+  );
+  animation: block-scan 3s ease-in-out infinite;
+}
+
+@keyframes block-scan {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+/* Gold Extraction Particle Effect */
+.extraction-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 1), rgba(184, 134, 11, 0.5));
+  border-radius: 50%;
+  pointer-events: none;
+  animation: extract-rise 4s ease-out infinite;
+}
+
+@keyframes extract-rise {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(var(--drift, 20px));
+  }
+}
+
+/* Mining Tunnel Gradient */
+.tunnel-gradient {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(40, 30, 20, 0.4) 0%,
+    rgba(20, 15, 10, 0.8) 50%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+/* Industrial Glow */
+.industrial-glow {
+  box-shadow: 
+    0 0 30px rgba(184, 134, 11, 0.2),
+    0 0 60px rgba(184, 134, 11, 0.1),
+    inset 0 0 30px rgba(184, 134, 11, 0.05);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+/* Blockchain Chain Link */
+.chain-link {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(30, 25, 20, 0.9), rgba(20, 15, 10, 0.9));
+  border: 2px solid rgba(184, 134, 11, 0.4);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  transition: all 0.3s ease;
+}
+
+.chain-link:hover {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+}
+
+/* Mining Equipment Indicator */
+.equipment-indicator {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(184, 134, 11, 0.3),
+    rgba(251, 191, 36, 0.6),
+    rgba(184, 134, 11, 0.3)
+  );
+  border-radius: 50%;
+  animation: equipment-rotate 6s linear infinite;
+}
+
+@keyframes equipment-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Deposit Layer Stripes */
+.deposit-layers {
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(40, 30, 20, 0.5),
+    rgba(40, 30, 20, 0.5) 30px,
+    rgba(30, 22, 15, 0.5) 30px,
+    rgba(30, 22, 15, 0.5) 60px,
+    rgba(50, 38, 25, 0.5) 60px,
+    rgba(50, 38, 25, 0.5) 90px
+  );
+}
+
+/* Digital Vein Effect */
+.digital-vein {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(251, 191, 36, 0.6),
+    rgba(255, 215, 0, 0.8),
+    rgba(251, 191, 36, 0.6),
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+  animation: vein-pulse 2s ease-in-out infinite;
+}
+
+@keyframes vein-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+}
