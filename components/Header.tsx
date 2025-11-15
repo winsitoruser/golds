@@ -26,6 +26,12 @@ export default function Header() {
             <a href="/" className="text-gray-300 hover:text-gold-400 transition-colors">
               Home
             </a>
+            <a href="/whitelist" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold relative">
+              <span className="relative">
+                🏆 Whitelist
+                <span className="absolute -top-1 -right-3 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+              </span>
+            </a>
             <a href="/staking" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold">
               ⛏️ Staking
             </a>
@@ -63,6 +69,10 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 space-y-4">
             <a href="/" className="block text-gray-300 hover:text-gold-400 transition-colors">
               Home
+            </a>
+            <a href="/whitelist" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold flex items-center space-x-2">
+              <span>🏆 Whitelist</span>
+              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
             </a>
             <a href="/staking" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold">
               ⛏️ Staking

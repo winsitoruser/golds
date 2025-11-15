@@ -1,6 +1,6 @@
 'use client'
 
-import { Sparkles, TrendingUp, Shield, Zap, Rocket, Coins, ArrowRight } from 'lucide-react'
+import { Sparkles, TrendingUp, Shield, Zap, Rocket, Coins, ArrowRight, Trophy } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Hero() {
@@ -179,6 +179,12 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/whitelist" className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-xl font-bold transition-all hover:shadow-xl hover:shadow-purple-500/30 flex items-center justify-center space-x-2">
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              <Trophy className="w-5 h-5" />
+              <span>Join Whitelist</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
             <a href="#sale" className="group px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white rounded-xl font-bold transition-all hover:shadow-xl hover:shadow-amber-500/30 flex items-center justify-center space-x-2">
               <Coins className="w-5 h-5" />
               <span>Buy GOLDS Tokens</span>
@@ -187,10 +193,6 @@ export default function Hero() {
             <a href="/staking" className="px-8 py-4 bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-amber-500/50 text-white rounded-xl font-semibold transition-all flex items-center justify-center space-x-2">
               <Zap className="w-5 h-5" />
               <span>Start Staking</span>
-            </a>
-            <a href="/dashboard" className="px-8 py-4 bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-amber-500/50 text-white rounded-xl font-semibold transition-all flex items-center justify-center space-x-2">
-              <TrendingUp className="w-5 h-5" />
-              <span>View Dashboard</span>
             </a>
           </div>
         </div>
