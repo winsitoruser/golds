@@ -1,97 +1,80 @@
 'use client'
 
-import { Coins, Menu, X } from 'lucide-react'
+import { Coins, Menu, X, Mountain, Gem, Zap } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-gold-900/30">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-blue-500/10">
+      <nav className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gold-gradient rounded-full flex items-center justify-center glow-gold">
-              <Coins className="w-6 h-6 text-black" />
+          {/* Linea-style Logo */}
+          <a href="/" className="flex items-center space-x-2.5 group">
+            <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
+              <Coins className="w-5 h-5 text-blue-400" />
             </div>
-            <div>
-              <span className="text-xl font-bold text-gold-400">Gold Source</span>
-              <span className="text-xs text-gray-400 ml-2">GOLDS</span>
-            </div>
-          </div>
+            <span className="text-xl font-bold text-white tracking-tight">SourceofGold</span>
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-300 hover:text-gold-400 transition-colors">
+          {/* Dark Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
+            <a href="/" className="px-4 py-2 text-gray-400 hover:text-blue-400 transition-colors font-medium text-sm">
               Home
             </a>
-            <a href="/whitelist" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold relative">
-              <span className="relative">
-                🏆 Whitelist
-                <span className="absolute -top-1 -right-3 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-              </span>
+            <a href="/whitelist" className="px-4 py-2 text-gray-400 hover:text-blue-400 transition-colors font-medium text-sm">
+              Whitelist
             </a>
-            <a href="/staking" className="text-gray-300 hover:text-gold-400 transition-colors font-semibold">
-              ⛏️ Staking
+            <a href="/staking" className="px-4 py-2 text-gray-400 hover:text-blue-400 transition-colors font-medium text-sm">
+              Staking
             </a>
-            <a href="/calculator" className="text-gray-300 hover:text-gold-400 transition-colors">
-              🧮 Calculator
+            <a href="/calculator" className="px-4 py-2 text-gray-400 hover:text-blue-400 transition-colors font-medium text-sm">
+              Calculator
             </a>
-            <a href="/dashboard" className="text-gray-300 hover:text-gold-400 transition-colors">
-              📊 Dashboard
-            </a>
-            <a href="#tokenomics" className="text-gray-300 hover:text-gold-400 transition-colors">
+            <a href="#tokenomics" className="px-4 py-2 text-gray-400 hover:text-blue-400 transition-colors font-medium text-sm">
               Tokenomics
-            </a>
-            <a href="#" className="text-gray-300 hover:text-gold-400 transition-colors">
-              Whitepaper
             </a>
           </div>
 
-          {/* Connect Wallet Button */}
-          <button className="group hidden md:block relative px-6 py-2.5 bg-gold-gradient hover:scale-105 text-black rounded-lg font-semibold transition-all neon-gold overflow-hidden">
-            <span className="relative z-10">Connect Wallet</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+          {/* Linea-style Button */}
+          <button className="hidden lg:flex items-center space-x-2 px-5 py-2.5 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-blue-400 rounded-lg transition-all font-medium text-sm hover:shadow-lg hover:shadow-blue-500/20">
+            <span>Connect Wallet</span>
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Dark Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white"
-          >
+            className="lg:hidden p-2 text-white hover:bg-blue-500/10 rounded-lg transition-colors">
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Dark Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <a href="/" className="block text-gray-300 hover:text-gold-400 transition-colors">
+          <div className="lg:hidden mt-4 pb-4 space-y-1 border-t border-blue-500/10 pt-4">
+            <a href="/" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
               Home
             </a>
-            <a href="/whitelist" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold flex items-center space-x-2">
-              <span>🏆 Whitelist</span>
-              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            <a href="/whitelist" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
+              Whitelist
             </a>
-            <a href="/staking" className="block text-gray-300 hover:text-gold-400 transition-colors font-semibold">
-              ⛏️ Staking
+            <a href="/staking" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
+              Staking
             </a>
-            <a href="/calculator" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              🧮 Calculator
+            <a href="/calculator" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
+              Calculator
             </a>
-            <a href="/dashboard" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              📊 Dashboard
-            </a>
-            <a href="#tokenomics" className="block text-gray-300 hover:text-gold-400 transition-colors">
+            <a href="#tokenomics" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
               Tokenomics
             </a>
-            <a href="#" className="block text-gray-300 hover:text-gold-400 transition-colors">
-              Whitepaper
-            </a>
-            <button className="w-full px-6 py-2.5 bg-gold-gradient text-black rounded-lg font-semibold">
-              Connect Wallet
-            </button>
+            
+            {/* Mobile Dark Button */}
+            <div className="pt-4">
+              <button className="w-full px-5 py-3 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-blue-400 rounded-lg transition-colors font-medium text-sm">
+                Connect Wallet
+              </button>
+            </div>
           </div>
         )}
       </nav>

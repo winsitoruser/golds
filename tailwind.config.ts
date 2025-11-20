@@ -29,7 +29,9 @@ const config: Config = {
       },
       animation: {
         'pulse-gold': 'pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 20s ease-in-out infinite',
+        'particle': 'particle 25s linear infinite',
+        'glow': 'glow 3s ease-in-out infinite',
       },
       keyframes: {
         'pulse-gold': {
@@ -37,8 +39,42 @@ const config: Config = {
           '50%': { opacity: '.7' },
         },
         'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '0%, 100%': { 
+            transform: 'translateY(0px) translateX(0px)',
+            opacity: '0.3'
+          },
+          '50%': { 
+            transform: 'translateY(-100px) translateX(50px)',
+            opacity: '0.8'
+          },
+        },
+        'particle': {
+          '0%': { 
+            transform: 'translate(0, 0) scale(1)',
+            opacity: '0'
+          },
+          '10%': {
+            opacity: '0.3'
+          },
+          '50%': { 
+            transform: 'translate(-50px, -200px) scale(1.5)',
+            opacity: '0.5'
+          },
+          '90%': {
+            opacity: '0.2'
+          },
+          '100%': { 
+            transform: 'translate(-100px, -400px) scale(0.5)',
+            opacity: '0'
+          },
+        },
+        'glow': {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)'
+          },
+          '50%': {
+            boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)'
+          }
         },
       },
     },

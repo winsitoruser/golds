@@ -8,10 +8,10 @@ export default function Roadmap() {
       quarter: 'Q4 2024',
       status: 'completed',
       milestones: [
-        'Concept Development',
-        'Team Formation',
-        'Smart Contract Development',
-        'Security Audit',
+        'Swiss Vault Partnership Secured',
+        'Initial Gold Reserves ($50M) Acquired',
+        'Smart Contract Development & CertiK Audit',
+        'Legal & Regulatory Compliance',
       ],
     },
     {
@@ -19,29 +19,29 @@ export default function Roadmap() {
       status: 'active',
       milestones: [
         'Public ICO Launch',
-        'Marketing Campaign',
-        'Community Building',
-        'Partnership Announcements',
+        'Quarterly Gold Audit Report',
+        'Exchange Partnership Agreements',
+        '10,000+ Investor Milestone',
       ],
     },
     {
       quarter: 'Q2 2025',
       status: 'upcoming',
       milestones: [
-        'DEX Listing (Uniswap)',
-        'CEX Listings',
-        'Mobile App Launch',
-        'Gold Reserve Integration',
+        'DEX Listing (Uniswap, PancakeSwap)',
+        'CEX Listings (Binance, Coinbase)',
+        'Physical Gold Redemption Platform',
+        'Mobile Wallet App Launch',
       ],
     },
     {
       quarter: 'Q3 2025',
       status: 'upcoming',
       milestones: [
-        'Staking Platform Launch',
-        'NFT Marketplace',
-        'Cross-chain Bridge',
-        'Global Expansion',
+        'Gold Reserve Expansion to $100M',
+        'Staking Platform (15% APY)',
+        'Institutional Partnership Program',
+        'International Vault Network (London, Singapore)',
       ],
     },
   ]
@@ -52,10 +52,10 @@ export default function Roadmap() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Roadmap
+            Roadmap to the Moon 🚀
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Our journey to revolutionize digital gold ownership
+            We're building in public. No empty promises. Just pure execution.
           </p>
         </div>
 

@@ -21,7 +21,7 @@ export default function InvestmentBenefits() {
       icon: TrendingUp,
       title: '250% Projected ROI',
       desc: 'Based on market analysis and gold price projections for 2025',
-      highlight: 'First Year'
+      highlight: 'Year 1'
     },
     {
       icon: Lock,
@@ -71,10 +71,10 @@ export default function InvestmentBenefits() {
               <span className="text-sm text-gray-300 font-medium tracking-wide">Investment Calculator</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-luxury">Project Your Returns</span>
+              <span className="text-luxury">Do The Math Yourself</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Calculate potential ROI and explore why institutional investors choose GOLDS for portfolio diversification
+              See how much you could make. No hopium, just real numbers backed by actual gold. 📈
             </p>
           </div>
 
@@ -206,17 +206,17 @@ export default function InvestmentBenefits() {
                 <span className="text-sm text-gray-300 font-medium tracking-wide">Early Investor Advantage</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-luxury">+20% Bonus for ICO Participants</span>
+                <span className="text-luxury">Early Birds Get +20% Free Tokens</span>
               </h3>
               <p className="text-base text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                ICO participants receive additional bonus tokens. Post-ICO price increases to $0.30 per token. Early participation ensures optimal entry price and maximum allocation.
+                Get in now = +20% bonus. Price pumps to $0.30 after ICO. Don't be the guy who FOMOs in later. 🎯
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="px-10 py-4 bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700 text-black rounded-lg font-semibold transition-all hover:shadow-2xl hover:shadow-gold-500/50">
-                  Participate in ICO
+                  Get My +20% Bonus Now 🚀
                 </button>
                 <button className="px-10 py-4 glass-gold hover:bg-gold-500/10 text-gray-300 hover:text-white rounded-lg font-semibold transition-all border border-gold-500/20 hover:border-gold-500/40">
-                  Read Token Economics
+                  Read Tokenomics
                 </button>
               </div>
             </div>

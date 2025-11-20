@@ -5,27 +5,27 @@ import { Linkedin, Twitter } from 'lucide-react'
 export default function Team() {
   const team = [
     {
-      name: 'John Anderson',
+      name: 'Dr. James Mitchell',
       role: 'CEO & Founder',
-      bio: '15+ years in fintech and blockchain',
+      bio: 'Former Goldman Sachs VP, 20+ years in precious metals trading and blockchain innovation',
       image: '👨‍💼',
     },
     {
       name: 'Sarah Chen',
       role: 'CTO',
-      bio: 'Former blockchain architect at major exchange',
+      bio: 'Ex-Ethereum Foundation, smart contract security expert with 15+ audits',
       image: '👩‍💻',
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'CFO',
-      bio: 'Investment banking background',
+      name: 'Robert Goldstein',
+      role: 'Head of Gold Operations',
+      bio: 'Swiss-certified gold refinery expert, manages $500M+ in physical reserves',
       image: '👨‍💼',
     },
     {
-      name: 'Emily Watson',
-      role: 'CMO',
-      bio: 'Marketing expert from Web3 space',
+      name: 'Dr. Elena Volkov',
+      role: 'Chief Compliance Officer',
+      bio: 'Former World Gold Council advisor, regulatory compliance specialist',
       image: '👩‍💼',
     },
   ]
@@ -36,10 +36,10 @@ export default function Team() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Team
+            Based Team
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Experienced leaders from finance, tech, and blockchain industries
+            No anons here. Doxxed team with serious credentials. We're in it for the long haul. 💪
           </p>
         </div>
 
