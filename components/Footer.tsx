@@ -1,6 +1,9 @@
 'use client'
 
-import { Coins, Twitter, Send, Github, Mail, Mountain, Gem, Shield, MapPin, Phone } from 'lucide-react'
+import { Twitter, Send, Github } from 'lucide-react'
+import Image from 'next/image'
+import LOGO from '@/app/assets/img/logo.png';
+import TEXT from '@/app/assets/img/text.png';
 
 export default function Footer() {
   return (
@@ -42,6 +45,9 @@ export default function Footer() {
 
           {/* Social */}
           <div>
+            <a href="/" className="flex items-center space-x-2.5 group mb-5">
+              <Image src={LOGO} width={80} alt='Logo' />
+            </a>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Social</h4>
             <div className="flex space-x-3">
               <a href="#" className="w-10 h-10 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-colors">

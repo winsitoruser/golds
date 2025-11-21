@@ -1,8 +1,11 @@
 'use client'
 
-import { Coins, Menu, X, Mountain, Gem, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
+import Image from 'next/image'
+import LOGO from '@/app/assets/img/logo.png';
+import TEXT from '@/app/assets/img/text.png';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -13,10 +16,8 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Linea-style Logo */}
           <a href="/" className="flex items-center space-x-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
-              <Coins className="w-5 h-5 text-blue-400" />
-            </div>
-            <span className="text-xl font-bold text-white tracking-tight">SourceofGold</span>
+            <Image src={LOGO} width={80} alt='Logo' />
+            <Image src={TEXT} width={150} alt='Text' />
           </a>
 
           {/* Dark Navigation */}
