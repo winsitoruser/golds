@@ -1,5 +1,8 @@
 'use client'
 
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useState } from "react";
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import LiveActivity from '@/components/LiveActivity'
@@ -14,14 +17,72 @@ import Team from '@/components/Team'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setInit(true));
+  }, []);
+
   return (
     <main className="min-h-screen bg-black relative overflow-hidden">
-      {/* Particle Canvas Background */}
-      <div className="fixed inset-0 z-0">
+      {init && (
+        <div className="absolute inset-0 z-5 pointer-events-none">
+          <Particles
+            id="hero-particles"
+            className="h-screen"
+            options={{
+              fullScreen: { enable: false },
+              background: { color: { value: "transparent" } }, // ✅ object, bukan string
+              fpsLimit: 60,
+              particles: {
+                number: {
+                  value: 200,
+                  density: {
+                    enable: true,
+                    height: 800,
+                  }
+                },
+                color: { value: "#dbdbdb" },
+                links: {
+                  enable: true,
+                  color: "#dbdbdb",
+                  distance: 160,
+                  opacity: 0.25,
+                  width: 1,
+                },
+                move: {
+                  enable: true,
+                  speed: 0.8,
+                  direction: "none",
+                  outModes: { default: "out" },
+                },
+                opacity: { value: 0.6 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 2.5 } },
+              },
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: "repulse" },
+                  onClick: { enable: true, mode: "push" },
+                },
+                modes: {
+                  repulse: { distance: 100, duration: 0.4 },
+                  push: { quantity: 3 },
+                },
+              },
+              detectRetina: true,
+            }}
+          />
+        </div>
+      )}
+
+      <div className="absolute inset-0 z-3 bg-linear-to-r from-[#000A12] via-[#000A12]/90 to-transparent"></div>
+
+      {/* <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black"></div>
-        
-        {/* Animated Particles */}
-        <div className="absolute inset-0">
+                <div className="absolute inset-0">
           {Array.from({ length: 50 }).map((_, i) => (
             <div
               key={i}
@@ -36,17 +97,15 @@ export default function Home() {
           ))}
         </div>
         
-        {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
           backgroundSize: '100px 100px'
         }}></div>
         
-        {/* Gradient Orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
-      </div>
-      
+      </div> */}
+
       <div className="relative z-10">
         <Header />
         <Hero />

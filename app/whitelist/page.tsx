@@ -6,6 +6,7 @@ import {
   Copy, Star, TrendingUp, Award, Shield, Sparkles, Coins,
   Crown, Flame, ChevronRight, Clock
 } from 'lucide-react'
+import Header from '@/components/Header'
 
 export default function WhitelistPage() {
   const [tasks, setTasks] = useState([
@@ -88,6 +89,8 @@ export default function WhitelistPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <Header />
+
       {/* Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent"></div>

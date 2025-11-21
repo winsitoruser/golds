@@ -2,6 +2,7 @@
 
 import { Coins, Menu, X, Mountain, Gem, Zap } from 'lucide-react'
 import { useState } from 'react'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -38,9 +39,28 @@ export default function Header() {
           </div>
 
           {/* Linea-style Button */}
-          <button className="hidden lg:flex items-center space-x-2 px-5 py-2.5 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-blue-400 rounded-lg transition-all font-medium text-sm hover:shadow-lg hover:shadow-blue-500/20">
-            <span>Connect Wallet</span>
-          </button>
+          <ConnectButton.Custom>
+            {({ account, chain, openConnectModal, openAccountModal, mounted }) => {
+              const connected = mounted && account && chain;
+
+              return (
+                <button
+                  onClick={() => {
+                    if (connected) {
+                      console.log("→ Opening account modal...");
+                      openAccountModal?.();
+                    } else {
+                      console.log("→ Opening connect modal...");
+                      openConnectModal?.();
+                    }
+                  }}
+                  className="hidden lg:flex items-center space-x-2 px-5 py-2.5 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-blue-400 rounded-lg transition-all font-medium text-sm hover:shadow-lg hover:shadow-blue-500/20"
+                >
+                  {connected ? "Account" : "Connect Wallet"}
+                </button>
+              );
+            }}
+          </ConnectButton.Custom>
 
           {/* Dark Mobile Menu Button */}
           <button
@@ -68,7 +88,7 @@ export default function Header() {
             <a href="#tokenomics" className="block px-4 py-3 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors font-medium text-sm rounded-lg">
               Tokenomics
             </a>
-            
+
             {/* Mobile Dark Button */}
             <div className="pt-4">
               <button className="w-full px-5 py-3 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-blue-400 rounded-lg transition-colors font-medium text-sm">

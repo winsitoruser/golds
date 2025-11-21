@@ -42,7 +42,7 @@ export default function CalculatorPage() {
     <div className="min-h-screen bg-black text-white">
       <Header />
       
-      <main className="pt-24 pb-20 px-4 relative overflow-hidden">
+      <main className="pt-24 pb-20 px-4 relative overflow-hidden mt-10">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent"></div>
@@ -257,8 +257,10 @@ export default function CalculatorPage() {
                         <td className="py-4 px-4 font-semibold text-white">{pool.name}</td>
                         <td className="py-4 px-4 text-amber-400 font-bold">{pool.apy}%</td>
                         <td className="py-4 px-4 text-gray-400">{pool.minDays === 0 ? 'Flexible' : `${pool.minDays} days`}</td>
-                        <td className="py-4 px-4 text-right text-white font-semibold">+{rewards30.toFixed(2)}</td>
-                        <td className="py-4 px-4 text-right text-green-400 font-bold">+{rewards365.toFixed(2)}</td>
+                        <td className="py-4 px-4 text-right text-white font-semibold">0</td>
+                        <td className="py-4 px-4 text-right text-green-400 font-bold">0</td>
+                        {/* <td className="py-4 px-4 text-right text-white font-semibold">+{rewards30.toFixed(2)}</td>
+                        <td className="py-4 px-4 text-right text-green-400 font-bold">+{rewards365.toFixed(2)}</td> */}
                       </tr>
                     )
                   })}
